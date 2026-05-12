@@ -72,10 +72,8 @@ endif
 GENERATED :=
 OBJECTS :=
 
-GENERATED += $(OBJDIR)/appHeader.o
 GENERATED += $(OBJDIR)/appModule.o
 GENERATED += $(OBJDIR)/main.o
-OBJECTS += $(OBJDIR)/appHeader.o
 OBJECTS += $(OBJDIR)/appModule.o
 OBJECTS += $(OBJDIR)/main.o
 
@@ -141,9 +139,6 @@ endif
 # File Rules
 # #############################################
 
-$(OBJDIR)/appHeader.o: src/core/appHeader.cpp
-	@echo "$(notdir $<)"
-	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/appModule.o: src/core/appModule.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
